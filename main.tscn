@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dpxngibg41cs6"]
+
+[ext_resource type="Texture2D" uid="uid://cdsmsdu1olxwd" path="res://assests/flappy_bird_assets/bg.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://h5omo8u74008" path="res://bird.tscn" id="2_0xm2m"]
+
+[node name="main" type="Node2D" unique_id=1165180855]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=534671584]
+position = Vector2(432, 384)
+texture = ExtResource("1_ig7tw")
+
+[node name="bird" parent="." unique_id=2066253207 instance=ExtResource("2_0xm2m")]
+position = Vector2(213, 135)

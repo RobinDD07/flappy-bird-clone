@@ -10,8 +10,8 @@ const start_pos = Vector2(100,400)
 func _ready():
 	reset()
 func reset():
-	flying = true
-	falling = true
+	flying = false
+	falling = false
 	var _posn = start_pos
 	set_rotation(0)
 	
@@ -20,17 +20,16 @@ func _physics_process(delta):
 		velocity.y += gravity*delta
 		if velocity.y > max_velocity:
 			velocity.y = max_velocity
-		if falling:
+		if not falling:
 			set_rotation(deg_to_rad(velocity.y*0.05))
 			$AnimatedSprite2D.play()
 		else:
 			set_rotation(PI/2)
 			$AnimatedSprite2D.stop()
 		move_and_collide(velocity*delta)
-		if Input.is_action_just_pressed("flap"):
-			flap(delta)
+		#if Input.is_action_just_pressed("flap"):
+			#flap()
 	else:
 		$AnimatedSprite2D.stop()
 func flap(delta):
 		velocity.y = flap_speed + gravity*delta
-		

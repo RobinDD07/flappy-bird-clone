@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://dpxngibg41cs6"]
 
+[ext_resource type="Script" uid="uid://d2pblg2cqc6oq" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://cdsmsdu1olxwd" path="res://assests/flappy_bird_assets/bg.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://h5omo8u74008" path="res://bird.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dspn05ryxk05p" path="res://assests/flappy_bird_assets/ground.png" id="3_h2yge"]
 
 [node name="main" type="Node2D" unique_id=1165180855]
+script = ExtResource("1_1bvp3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=534671584]
 position = Vector2(432, 384)
@@ -11,3 +14,7 @@ texture = ExtResource("1_ig7tw")
 
 [node name="bird" parent="." unique_id=2066253207 instance=ExtResource("2_0xm2m")]
 position = Vector2(213, 135)
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=1903104129]
+position = Vector2(861, 849)
+texture = ExtResource("3_h2yge")

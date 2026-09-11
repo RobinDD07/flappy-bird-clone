@@ -31,8 +31,8 @@ script = ExtResource("1_cchwj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=350555008]
 sprite_frames = SubResource("SpriteFrames_owhn0")
-autoplay = "default"
-frame_progress = 0.751859
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2053123890]
 rotation = 1.5707964

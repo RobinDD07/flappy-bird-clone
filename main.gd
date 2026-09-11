@@ -19,7 +19,7 @@ func new_game():
 func start_game():
 	game_running = true
 	$bird.flying = true
-	#$bird.falling = false
+	$bird.falling = false
 	$bird.flap(get_process_delta_time())
 
 func _ready():

@@ -20,15 +20,16 @@ func new_game():
 	game_running = false
 	game_over = false
 	pipes.clear()
-	generate_pipes()
+	
 	$bird.reset()
-	$PipeTimer.start()
 	
 func start_game():
 	game_running = true
 	$bird.flying = true
 	$bird.falling = false
 	$bird.flap(get_process_delta_time())
+	generate_pipes()
+	$PipeTimer.start()
 
 func _ready():
 	screen_size = get_window().size

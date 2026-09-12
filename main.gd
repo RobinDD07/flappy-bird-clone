@@ -3,13 +3,15 @@ extends Node2D
 var game_running: bool
 var game_over: bool
 
-var scroll
+var scroll: int
 var score
 const scroll_speed: int = 4 
 var pipes: Array
 
 #const pipe_delay
 #const pipe_range
+
+var screen_size : Vector2i #vector2i integers lega, whereas vector2 decimals leta hai
 
 func new_game():
 	game_running = false
@@ -23,6 +25,7 @@ func start_game():
 	$bird.flap(get_process_delta_time())
 
 func _ready():
+	screen_size = get_window().size
 	new_game()
 
 func _input(event):
@@ -34,3 +37,10 @@ func _input(event):
 				else:
 					if $bird.flying:
 						$bird.flap(get_process_delta_time())
+
+func _process(delta):
+	if game_running:
+		scroll += scroll_speed
+		if scroll >= screen_size.x:
+			scroll = 0
+		$Ground.position.x = -scroll + 864

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcmdlkbfbiysy" path="res://pipes.gd" id="1_og227"]
 [ext_resource type="Texture2D" uid="uid://baixc7tfs5c8d" path="res://assests/flappy_bird_assets/pipe.png" id="1_r1kwc"]
+[ext_resource type="AudioStream" uid="uid://cyxoow2pwcu38" path="res://assests/flappy_bird_assets/hit.mp3" id="3_l4tgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og227"]
 size = Vector2(68, 557)
@@ -9,7 +10,10 @@ size = Vector2(68, 557)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4tgv"]
 size = Vector2(68, 557)
 
-[node name="pipes" type="Area2D" unique_id=1098462800]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj04i"]
+size = Vector2(28, 205)
+
+[node name="pipes" type="Area2D" unique_id=1098462800 groups=["pipes"]]
 script = ExtResource("1_og227")
 
 [node name="Lower" type="Sprite2D" parent="." unique_id=1111969822]
@@ -28,3 +32,16 @@ shape = SubResource("RectangleShape2D_og227")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=225455430]
 position = Vector2(0, -383.5)
 shape = SubResource("RectangleShape2D_l4tgv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1380151732]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1047746960]
+position = Vector2(51, 0)
+shape = SubResource("RectangleShape2D_uj04i")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1896237131]
+stream = ExtResource("3_l4tgv")
+volume_db = 11.254
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

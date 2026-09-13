@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmcmo0q45osee" path="res://assests/flappy_bird_assets/bird1.png" id="2_6ljjq"]
 [ext_resource type="Texture2D" uid="uid://c3f58kuofeipn" path="res://assests/flappy_bird_assets/bird2.png" id="3_axl6x"]
 [ext_resource type="Texture2D" uid="uid://cilpfgmyq7r2g" path="res://assests/flappy_bird_assets/bird3.png" id="4_yr30m"]
+[ext_resource type="AudioStream" uid="uid://b5ct7h30kir1w" path="res://assests/flappy_bird_assets/flap(updated).mp3" id="5_6ljjq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_owhn0"]
 animations = [{
@@ -37,3 +38,7 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2053123890]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_uj04i")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2070173124]
+stream = ExtResource("5_6ljjq")
+volume_db = 8.149

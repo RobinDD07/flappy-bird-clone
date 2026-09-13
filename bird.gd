@@ -12,7 +12,7 @@ func _ready():
 func reset():
 	flying = false
 	falling = false
-	var _posn = start_pos
+	$".".position = start_pos #   $"." is  path of bird node
 	set_rotation(0)
 	
 func _physics_process(delta):
@@ -32,3 +32,4 @@ func _physics_process(delta):
 		$AnimatedSprite2D.stop()
 func flap(delta):
 		velocity.y = flap_speed + gravity*delta
+		$AudioStreamPlayer2D.play()
